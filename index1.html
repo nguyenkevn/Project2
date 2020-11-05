@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/modal-video.min.css"> -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+  <script type="text/javascript">
+    var jQuery13 = jQuery.noConflict();
+  </script>
+  <script src='assets/js/jquery.svg3dtagcloud.min.js'></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <!-- <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="assets/js/functions-min.js"></script> -->
+  <!-- <script src="assets/js/c3.min.js"></script>
+  <script src="assets/js/papaparse.min.js"></script> -->
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script> -->
+</head>
+
+<body>
+  <!-- <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Project 2</h1>
+      <a class="btn btn-primary btn-lg" href="/indeed" role="button">Click Here For New Data!</a>
+    </div>
+  </div> -->
+  <div class="new">
+    <div id='analyst'></div>
+    <style type='text/css'>
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      font,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <script>
+
+      jQuery13(document).ready(function () {
+
+        var entries = [
+
+          { label: 'DATA', url:'#', target: '_top' },
+          { label: 'Business', url: '#', target: '_top' },
+          { label: 'Experience', url: '#', target: '_top' },
+          { label: 'Analysis', url: '#', target: '_top' },
+          { label: 'Analytics', url: '#', target: '_top' },
+          { label: 'Management', url: '#', target: '_top' },
+          { label: 'Team', url: '#/', target: '_top' },
+          { label: 'Skills', url: '#', target: '_top' },
+          { label: 'Ability', url: '#', target: '_top' },
+          { label: 'Support', url: '#', target: '_top' },
+          { label: 'Information', url: '#', target: '_top' },
+          { label: 'Knowledge', url: '#', target: '_top' },
+          { label: 'Reports', url: '#', target: '_top' },
+          { label: 'Tools', url: '#', target: '_top' },
+          { label: 'Development', url: '#', target: '_top' },
+          { label: 'Sql', url: '#', target: '_top' },
+          { label: 'Marketing', url: '#', target: '_top' },
+          { label: 'Communication', url: '#', target: '_top' },
+          { label: 'Product', url: '#', target: '_top' },
+          { label: 'Computer Science', url: '#', target: '_top' },
+          { label: 'Data Management', url: '#', target: '_top' },
+          { label: 'Business Intelligence', url: '#', target: '_top' },
+          { label: 'Analytical', url: '#', target: '_top' },
+          { label: 'Analyst', url: '#', target: '_top' },
+          { label: 'Develop', url: 'h#', target: '_top' },
+          { label: 'Complex', url: '#', target: '_top' },
+          { label: 'Data analyst', url: '#', target: '_top' },
+          { label: 'Data Quality', url: '#', target: '_top' },
+
+        ];
+
+        var settings = {
+
+          entries: entries,
+          width: 480,
+          height: 480,
+          radius: '65%',
+          radiusMin: 75,
+          bgDraw: true,
+          bgColor: 'transparent',
+          opacityOver: 1.00,
+          opacityOut: 0.05,
+          opacitySpeed: 6,
+          fov: 800,
+          speed: 0.65,
+          fontFamily: 'Oswald, Arial, sans-serif',
+          fontSize: '15',
+          fontColor: '#111',
+          fontWeight: 'normal',//bold
+          fontStyle: 'normal',//italic 
+          fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+          fontToUpperCase: true,
+          tooltipFontFamily: 'Oswald, Arial, sans-serif',
+          tooltipFontSize: '11',
+          tooltipFontColor: '#fff',
+          tooltipFontWeight: 'normal',//bold
+          tooltipFontStyle: 'normal',//italic 
+          tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+          tooltipFontToUpperCase: false,
+          tooltipTextAnchor: 'left',
+          tooltipDiffX: 0,
+          tooltipDiffY: 10
+
+        };
+
+        //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+        jQuery13('#analyst').svg3DTagCloud(settings);
+
+      });
+
+
+    </script>
+        <style type='text/css'>
+          html,
+          body,
+          div,
+          span,
+          applet,
+          object,
+          iframe,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p,
+          blockquote,
+          pre,
+          a,
+          abbr,
+          acronym,
+          address,
+          big,
+          cite,
+          code,
+          del,
+          dfn,
+          em,
+          font,
+          img,
+          ins,
+          kbd,
+          q,
+          s,
+          samp,
+          small,
+          strike,
+          strong,
+          sub,
+          sup,
+          tt,
+          var,
+          b,
+          u,
+          i,
+          center,
+          dl,
+          dt,
+          dd,
+          ol,
+          ul,
+          li,
+          fieldset,
+          form,
+          label,
+          legend,
+          table,
+          caption,
+          tbody,
+          tfoot,
+          thead,
+          tr,
+          th,
+          td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+            box-sizing: border-box;
+          }
+        </style>
+    
+        <script>
+    
+          $(document).ready(function () {
+    
+            var entries = [
+    
+              { label: 'DATA', url:'#', target: '_top' },
+              { label: 'Business', url: '#', target: '_top' },
+              { label: 'Experience', url: '#', target: '_top' },
+              { label: 'Solutions', url: '#', target: '_top' },
+              { label: 'Analytics', url: '#', target: '_top' },
+              { label: 'Management', url: '#', target: '_top' },
+              { label: 'Team', url: '#/', target: '_top' },
+              { label: 'Engineering', url: '#', target: '_top' },
+              { label: 'Design', url: '#', target: '_top' },
+              { label: 'Support', url: '#', target: '_top' },
+              { label: 'Technologies', url: '#', target: '_top' },
+              { label: 'Knowledge', url: '#', target: '_top' },
+              { label: 'Science', url: '#', target: '_top' },
+              { label: 'Tools', url: '#', target: '_top' },
+              { label: 'Development', url: '#', target: '_top' },
+              { label: 'Sql', url: '#', target: '_top' },
+              { label: 'Marketing', url: '#', target: '_top' },
+              { label: 'Software', url: '#', target: '_top' },
+              { label: 'Systems', url: '#', target: '_top' },
+              { label: 'Building', url: '#', target: '_top' },
+              { label: 'Data Management', url: '#', target: '_top' },
+              { label: 'Cloud', url: '#', target: '_top' },
+              { label: 'Python', url: '#', target: '_top' },
+              { label: 'Degree Computer Science', url: '#', target: '_top' },
+              { label: 'Machine Learning', url: 'h#', target: '_top' },
+              { label: 'Data Engineering', url: '#', target: '_top' },
+              { label: 'Build', url: '#', target: '_top' },
+              { label: 'Services', url: '#', target: '_top' },
+    
+            ];
+    
+            var settings = {
+    
+              entries: entries,
+              width: 480,
+              height: 480,
+              radius: '65%',
+              radiusMin: 75,
+              bgDraw: true,
+              bgColor: '#111',
+              opacityOver: 1.00,
+              opacityOut: 0.05,
+              opacitySpeed: 6,
+              fov: 800,
+              speed: 0.65,
+              fontFamily: 'Oswald, Arial, sans-serif',
+              fontSize: '15',
+              fontColor: '#fff',
+              fontWeight: 'normal',//bold
+              fontStyle: 'normal',//italic 
+              fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+              fontToUpperCase: true,
+              tooltipFontFamily: 'Oswald, Arial, sans-serif',
+              tooltipFontSize: '11',
+              tooltipFontColor: '#fff',
+              tooltipFontWeight: 'normal',//bold
+              tooltipFontStyle: 'normal',//italic 
+              tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+              tooltipFontToUpperCase: false,
+              tooltipTextAnchor: 'left',
+              tooltipDiffX: 0,
+              tooltipDiffY: 10
+    
+            };
+    
+            //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+            $('#engineer').svg3DTagCloud(settings);
+    
+          });
+    
+    
+        </script>
+            
+          </script>
+            <style type='text/css'>
+              html,
+              body,
+              div,
+              span,
+              applet,
+              object,
+              iframe,
+              h1,
+              h2,
+              h3,
+              h4,
+              h5,
+              h6,
+              p,
+              blockquote,
+              pre,
+              a,
+              abbr,
+              acronym,
+              address,
+              big,
+              cite,
+              code,
+              del,
+              dfn,
+              em,
+              font,
+              img,
+              ins,
+              kbd,
+              q,
+              s,
+              samp,
+              small,
+              strike,
+              strong,
+              sub,
+              sup,
+              tt,
+              var,
+              b,
+              u,
+              i,
+              center,
+              dl,
+              dt,
+              dd,
+              ol,
+              ul,
+              li,
+              fieldset,
+              form,
+              label,
+              legend,
+              table,
+              caption,
+              tbody,
+              tfoot,
+              thead,
+              tr,
+              th,
+              td {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+                box-sizing: border-box;
+              }
+            </style>
+        
+            <script>
+        
+              $(document).ready(function () {
+        
+                var entries = [
+        
+                  { label: 'DATA', url:'#', target: '_top' },
+                  { label: 'Business', url: '#', target: '_top' },
+                  { label: 'Experience', url: '#', target: '_top' },
+                  { label: 'Learning', url: '#', target: '_top' },
+                  { label: 'Analytics', url: '#', target: '_top' },
+                  { label: 'Management', url: '#', target: '_top' },
+                  { label: 'Team', url: '#/', target: '_top' },
+                  { label: 'Engineering', url: '#', target: '_top' },
+                  { label: 'Science', url: '#', target: '_top' },
+                  { label: 'Statistical', url: '#', target: '_top' },
+                  { label: 'Models', url: '#', target: '_top' },
+                  { label: 'Knowledge', url: '#', target: '_top' },
+                  { label: 'Advanced', url: '#', target: '_top' },
+                  { label: 'Tools', url: '#', target: '_top' },
+                  { label: 'Development', url: '#', target: '_top' },
+                  { label: 'Solutions', url: '#', target: '_top' },
+                  { label: 'Research', url: '#', target: '_top' },
+                  { label: 'Statistics', url: '#', target: '_top' },
+                  { label: 'Modeling', url: '#', target: '_top' },
+                  { label: 'Algorithms', url: '#', target: '_top' },
+                  { label: 'Data Science', url: '#', target: '_top' },
+                  { label: 'Software', url: '#', target: '_top' },
+                  { label: 'Python', url: '#', target: '_top' },
+                  { label: 'Computer Science', url: '#', target: '_top' },
+                  { label: 'Machine Learning', url: 'h#', target: '_top' },
+                  { label: 'Deep Learning', url: '#', target: '_top' },
+                  { label: 'Natural Language Processing', url: '#', target: '_top' },
+                  { label: 'Data Mining', url: '#', target: '_top' },
+        
+                ];
+        
+                var settings = {
+        
+                  entries: entries,
+                  width: 480,
+                  height: 480,
+                  radius: '65%',
+                  radiusMin: 75,
+                  bgDraw: true,
+                  bgColor: '#111',
+                  opacityOver: 1.00,
+                  opacityOut: 0.05,
+                  opacitySpeed: 6,
+                  fov: 800,
+                  speed: 0.65,
+                  fontFamily: 'Oswald, Arial, sans-serif',
+                  fontSize: '15',
+                  fontColor: '#fff',
+                  fontWeight: 'normal',//bold
+                  fontStyle: 'normal',//italic 
+                  fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                  fontToUpperCase: true,
+                  tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                  tooltipFontSize: '11',
+                  tooltipFontColor: '#fff',
+                  tooltipFontWeight: 'normal',//bold
+                  tooltipFontStyle: 'normal',//italic 
+                  tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                  tooltipFontToUpperCase: false,
+                  tooltipTextAnchor: 'left',
+                  tooltipDiffX: 0,
+                  tooltipDiffY: 10
+        
+                };
+        
+                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+                $('#scientist').svg3DTagCloud(settings);
+        
+              });
+        
+        
+            </script>
+    <div id='analyst'></div>
+    <div id='engineer'></div>
+    
+
+    <!-- <button class="glow-on-hover " style=color:teal; type="button" ;width:150px; height:40px;
+    onclick="changejobType('data_engineer')">Data Engineer</button>
+    <button class="glow-on-hover" style=color:teal; type="button" ;width:150px; height:40px;
+    onclick="changejobType('data_analyst')">Data Analyst</button>
+    <button class="glow-on-hover" style=color:teal; type="button" ;width:150px; height:40px;
+    onclick="changejobType('data_scientist')">Data Scientist</button>
+    <div id='vis-container'></div>
+  <script src="assets/js/heran.js"></script> -->
+  </div>
+
+
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="../static/js/app.js"></script> -->
+</body>
+
+</html>

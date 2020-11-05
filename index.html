@@ -11,11 +11,16 @@
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/modal-video.min.css">
-  <!-- <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="assets/js/c3.min.js"></script>
-  <script src="assets/js/papaparse.min.js"></script> -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="assets/js/functions-min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+  <script type="text/javascript">
+    var jQuery13 = jQuery.noConflict();
+  </script>
+  <script src='assets/js/jquery.svg3dtagcloud.min.js'></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -41,9 +46,9 @@
               <p>GW Bootcamp</p>
             </a>
             <!-- <button class="header--cta cta">Hire Us</button> -->
-          <div class="header--nav-toggle">
-            <span></span>
-          </div>
+            <div class="header--nav-toggle">
+              <span></span>
+            </div>
           </header>
           <nav class="l-side-nav">
             <ul class="side-nav">
@@ -54,21 +59,14 @@
               <li><span>Hire us</span></li>
               <li><span>Test tab6</span></li>
               <li><span>Test tab7</span></li>
+              <li><span>Tab 8</span></li>
             </ul>
           </nav>
           <ul class="l-main-content main-content">
             <li class="l-section section section--is-active">
               <div class="intro">
                 <div class="intro--banner">
-                  <h1>So you want<br>to explore<br>Data Analysis?</h1>
-                  <button class="cta">Pull Data
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"></path>
-                    </g>
-                    </svg>
-                    <span class="btn-background"></span>
-                  </button>
+                  <h1>So you want<br>to explore</br>Data Analysis?</h1>
                   <img class="gif" src="assets/img/pic3.gif">
                   <img src="assets/img/introduction-visual.png" alt="Welcome">
                 </div>
@@ -184,138 +182,32 @@
                 </script>
                 <p>test text</p>
               </div>
-              
+
             </li>
             <li class="l-section section">
-              <div class="hire">
-                <canvas id="myChart" class="chart"></canvas>
-                <script>
-                  var ctx = document.getElementById('myChart').getContext('2d');
-                  var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                      datasets: [{
-                        label: 'Fake labels',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                          'rgba(255, 99, 132, 0.2)',
-                          'rgba(54, 162, 235, 0.2)',
-                          'rgba(255, 206, 86, 0.2)',
-                          'rgba(75, 192, 192, 0.2)',
-                          'rgba(153, 102, 255, 0.2)',
-                          'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                          'rgba(255, 99, 132, 1)',
-                          'rgba(54, 162, 235, 1)',
-                          'rgba(255, 206, 86, 1)',
-                          'rgba(75, 192, 192, 1)',
-                          'rgba(153, 102, 255, 1)',
-                          'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                      }]
-                    },
-                    options: {
-                      scales: {
-                        yAxes: [{
-                          ticks: {
-                            beginAtZero: true
-                          }
-                        }]
-                      }
-                    }
-                  });
-                </script>
+              <div class="about">
+
+                <h1>Put graph here</h1>
+                <div class="new">
+                  <button class="glow-on-hover " style=color:teal; type="button" ;width:150px; height:40px;
+                    onclick="changejobType('Data Engineer')">Data Engineer</button>
+                  <button class="glow-on-hover" style=color:teal type="button" ;width:150px; height:40px;
+                    onclick="changejobType('Data Analyst')">Data Analyst</button>
+                  <button class="glow-on-hover" style=color:teal type="button" ;width:150px; height:40px;
+                    onclick="changejobType('Data Scientist')">Data Scientist</button>
+                  <div id='vis-container'></div>
+                  <script src="assets/js/heran.js"></script>
+                </div>
+                <div id='vis-container'></div>
+
               </div>
             </li>
             <li class="l-section section">
               <div class="hire">
                 <h2>You want us to drink</h2>
-                <div id="plot"></div>
-                <script src="plots1.js"></script>
+                <div id="myDiv"></div>
+                <script src="assets/js/heran.js"></script>
                 <p>Sample text</p>
-                <!-- checkout formspree.io for easy form setup -->
-                <!-- <form class="work-request">
-                <div class="work-request--options">
-                  <span class="options-a">
-                    <input id="opt-1" type="checkbox" value="app design">
-                    <label for="opt-1">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      App Design
-                    </label>
-                    <input id="opt-2" type="checkbox" value="graphic design">
-                    <label for="opt-2">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Graphic Design
-                    </label>
-                    <input id="opt-3" type="checkbox" value="motion design">
-                    <label for="opt-3">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Motion Design
-                    </label>
-                  </span>
-                  <span class="options-b">
-                    <input id="opt-4" type="checkbox" value="ux design">
-                    <label for="opt-4">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      UX Design
-                    </label>
-                    <input id="opt-5" type="checkbox" value="webdesign">
-                    <label for="opt-5">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Webdesign
-                    </label>
-                    <input id="opt-6" type="checkbox" value="marketing">
-                    <label for="opt-6">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Marketing
-                    </label>
-                  </span>
-                </div>
-                <div class="work-request--information">
-                  <div class="information-name">
-                    <input id="name" type="text" spellcheck="false">
-                    <label for="name">Name</label>
-                  </div>
-                  <div class="information-email">
-                    <input id="email" type="email" spellcheck="false">
-                    <label for="email">Email</label>
-                  </div>
-                </div>
-                <input type="submit" value="Send Request">
-              </form> -->
               </div>
             </li>
             <li class="l-section section">
@@ -323,11 +215,179 @@
                 <!-- <div class="about--banner"> -->
                 <!-- <h2>We<br>believe in<br>passionate<br>people</h2> -->
                 <h2>Test how this looks</h2>
-                <div id="plot1"></div>
-                <script src="plots.js"></script>
-                <p>Sample text</p>
-                <!-- </div> -->
+                <select id="Dropdown1">
+                  <option value="Engineer">Engineer</option>
+                  <option value="Analyst">Analyst</option>
+                  <option value="Scientist">Scientist</option>
+                </select>
               </div>
+              <div id="plot"></div>
+              <script src="assets/js/heran.js"></script>
+              <p>Sample text</p>
+              <!-- </div> -->
+            </li>
+            <li class="l-section section">
+              <div class="hire">
+                <h2>Test how this looks</h2>
+                <div class="work">
+                  <div id='scientist'></div>
+                  <style type='text/css'>
+                    html,
+                    body,
+                    div,
+                    span,
+                    applet,
+                    object,
+                    iframe,
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6,
+                    p,
+                    blockquote,
+                    pre,
+                    a,
+                    abbr,
+                    acronym,
+                    address,
+                    big,
+                    cite,
+                    code,
+                    del,
+                    dfn,
+                    em,
+                    font,
+                    img,
+                    ins,
+                    kbd,
+                    q,
+                    s,
+                    samp,
+                    small,
+                    strike,
+                    strong,
+                    sub,
+                    sup,
+                    tt,
+                    var,
+                    b,
+                    u,
+                    i,
+                    center,
+                    dl,
+                    dt,
+                    dd,
+                    ol,
+                    ul,
+                    li,
+                    fieldset,
+                    form,
+                    label,
+                    legend,
+                    table,
+                    caption,
+                    tbody,
+                    tfoot,
+                    thead,
+                    tr,
+                    th,
+                    td {
+                      margin: 0;
+                      padding: 0;
+                      border: 0;
+                      outline: 0;
+                      font-size: 100%;
+                      vertical-align: baseline;
+                      /* background: transparent; */
+                      box-sizing: border-box;
+                    }
+                  </style>
+
+                  <script>
+
+                    jQuery13(document).ready(function () {
+
+                      var entries = [
+
+                        { label: 'DATA', url: '#', target: '_top' },
+                        { label: 'Business', url: '#', target: '_top' },
+                        { label: 'Experience', url: '#', target: '_top' },
+                        { label: 'Learning', url: '#', target: '_top' },
+                        { label: 'Analytics', url: '#', target: '_top' },
+                        { label: 'Management', url: '#', target: '_top' },
+                        { label: 'Team', url: '#/', target: '_top' },
+                        { label: 'Engineering', url: '#', target: '_top' },
+                        { label: 'Science', url: '#', target: '_top' },
+                        { label: 'Statistical', url: '#', target: '_top' },
+                        { label: 'Models', url: '#', target: '_top' },
+                        { label: 'Knowledge', url: '#', target: '_top' },
+                        { label: 'Advanced', url: '#', target: '_top' },
+                        { label: 'Tools', url: '#', target: '_top' },
+                        { label: 'Development', url: '#', target: '_top' },
+                        { label: 'Solutions', url: '#', target: '_top' },
+                        { label: 'Research', url: '#', target: '_top' },
+                        { label: 'Statistics', url: '#', target: '_top' },
+                        { label: 'Modeling', url: '#', target: '_top' },
+                        { label: 'Algorithms', url: '#', target: '_top' },
+                        { label: 'Data Science', url: '#', target: '_top' },
+                        { label: 'Software', url: '#', target: '_top' },
+                        { label: 'Python', url: '#', target: '_top' },
+                        { label: 'Computer Science', url: '#', target: '_top' },
+                        { label: 'Machine Learning', url: 'h#', target: '_top' },
+                        { label: 'Deep Learning', url: '#', target: '_top' },
+                        { label: 'Natural Language Processing', url: '#', target: '_top' },
+                        { label: 'Data Mining', url: '#', target: '_top' },
+
+                      ];
+
+                      var settings = {
+
+                        entries: entries,
+                        width: 480,
+                        height: 480,
+                        radius: '65%',
+                        radiusMin: 75,
+                        bgDraw: true,
+                        bgColor: 'transparent',
+                        opacityOver: 1.00,
+                        opacityOut: 0.05,
+                        opacitySpeed: 6,
+                        fov: 800,
+                        speed: 0.65,
+                        fontFamily: 'Oswald, Arial, sans-serif',
+                        fontSize: '15',
+                        fontColor: '#fff',
+                        fontWeight: 'normal',//bold
+                        fontStyle: 'normal',//italic 
+                        fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                        fontToUpperCase: true,
+                        tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                        tooltipFontSize: '11',
+                        tooltipFontColor: '#fff',
+                        tooltipFontWeight: 'normal',//bold
+                        tooltipFontStyle: 'normal',//italic 
+                        tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                        tooltipFontToUpperCase: false,
+                        tooltipTextAnchor: 'left',
+                        tooltipDiffX: 0,
+                        tooltipDiffY: 10
+
+                      };
+
+                      //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+                      jQuery13('#scientist').svg3DTagCloud(settings);
+
+                    });
+
+
+                  </script>
+                </div>
+              </div>
+
+              <p>Sample text</p>
+              <!-- </div> -->
             </li>
             <li class="l-section section">
               <div class="about">
@@ -356,9 +416,6 @@
                   </a>
                 </div>
               </div>
-              <!-- <div class="about--banner"> -->
-              <!-- <h2>We<br>believe in<br>passionate<br>people</h2> -->
-              <!-- </div> -->
             </li>
           </ul>
         </div>
@@ -372,6 +429,7 @@
       <li>Hire us</li>
       <li>Tab 6</li>
       <li>Tab 7</li>
+      <li>Tab 8</li>
     </ul>
   </div>
 
